@@ -23,10 +23,8 @@ carrierAmp = 10
 carrierFreq = 4000
 
 #message signal parameteres
-amp1 = 3
-amp2 = 6
-m1freq = 200
-m2freq = 600
+amp = 3
+freq = 200
 
 #sensitivity
 kf = 200
@@ -37,10 +35,9 @@ mf = 0
 BW = 0
 
 #message and carrier singal variables need to be calculated in the main file
-Vm1 = 0
-Vm2 = 0
-Vc = 0
 Vm = 0
+Vc = 0
+
 
 #modulated signal variables need to be calculated in main file
 Vfm = 0
