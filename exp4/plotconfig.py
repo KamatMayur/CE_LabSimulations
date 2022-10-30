@@ -1,13 +1,12 @@
 '''
 authour: Mayur Kamat
 affiliation: 201104032, TE-E&TC Engg. Sem V, 2021-22, GEC
-last updated: 15/10/2022
+last updated: 30/10/2022
 '''
 
 #importing necessary functions from libraries
 from numpy import cos, arange, linspace, fft, abs, argsort, ones
 from math import pi
-
 
 #these are sampling values
 fs = 200000
@@ -37,11 +36,9 @@ BWThreshold = 0.1
 mf = 0
 BW = 0
 
-
 #message and carrier singal variables need to be calculated in the main file
 Vm = 0
 Vc = 0
-
 
 #modulated signal variables need to be calculated in main file
 Vfm = 0
