@@ -29,10 +29,14 @@ freq = 200
 #sensitivity
 kf = 200
 
+# Bandwidth threshold, ignores sidebands below this value
+BWThreshold = 0.1
+
 #FM moudlation index and BW
 #needs to be calculated in the main file
 mf = 0
 BW = 0
+
 
 #message and carrier singal variables need to be calculated in the main file
 Vm = 0

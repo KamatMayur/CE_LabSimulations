@@ -34,14 +34,17 @@ def plotSingals():
 
     #calculating mf
     mf = (amp * kf) / freq
-
-    #calculating the bandwidth using Carson's Rule
-    BW = 2 * freq * (1 + mf)
  
     #calculating the FFT of FM signal
     spectrum = abs(fft.fft(Vfm))
     spectrum_plt = spectrum[idx]/N #sorting the indices and scaling the magnitude for plotting purpose 
 
+    #calculating the bandwidth by counting number of sidebands with significant value
+    BW = 0
+    for f in range(carrierFreq, int(spectrum.size/2)):
+        if spectrum[f]/N > BWThreshold:
+            BW = f
+    BW = (BW - carrierFreq) * 2
 
     #functions below plot the singals
     def plot_carrier():
@@ -119,7 +122,7 @@ def update_kf(val):
 
 
 #slider widgets
-ax_kf = plt.axes([0.17, 0.07, 0.65, 0.03])
+ax_kf = plt.axes([0.17, 0.11, 0.65, 0.03])
 kf_Slider = Slider(ax_kf, 'Kf', valmin=0, valmax=500, valstep=10, valinit=kf)
 
 ax_freq = plt.axes([0.17, 0.15, 0.65, 0.03])
